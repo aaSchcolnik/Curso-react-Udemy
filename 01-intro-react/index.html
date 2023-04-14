@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Cargar React -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script> <!-- Libreria propia de React -->
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script> <!-- Se encarga del navegador web -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> <!-- Babel hace la traducción de un codigo moderno a un codigo soportado por cualquier navegador web-->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ReactApp</title>
+</head>
+<body>
+
+    <div id="root"></div> <!-- Div comun y corriente, le dice a react que renderize lo siguiente dentro de este div root-->
+
+    <script type="text/babel">
+        
+        const divRoot = document.querySelector('#root'); //selecciona el div root
+
+        const nombre = 'Aaron'; //variable constante
+        const h1Tag = <h1>Hola, soy {nombre} </h1>; //acostumbrate a colocar punto y coma
+
+        ReactDOM.render(h1Tag, divRoot); //renderiza el h1 dentro del div root
+
+    </script>
+    
+</body>
+</html>
