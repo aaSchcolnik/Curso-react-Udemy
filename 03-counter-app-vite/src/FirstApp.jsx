@@ -31,7 +31,7 @@ export const FirstApp = ({title, subtitle, name}) => {
         se encuentre entre llaves sea una expresion
         y no un objeto podemos llevarlo a cabo, como
         por ejemplo una suma, multiplicacion etc. */}
-        
+
         <p>{ subtitle }</p>
         <p>{ name }</p>
 
