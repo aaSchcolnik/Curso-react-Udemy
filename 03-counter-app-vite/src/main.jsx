@@ -15,7 +15,8 @@ import './styles.css';
 // aqui estamos llevando a cabo el renderizado de nuestro componente
 ReactDOM.createRoot( document.getElementById('root') ).render(
     <React.StrictMode> 
-        <CounterApp value={10}/>
+        {/* <CounterApp value={10}/> */}
+        <FirstApp />
     </React.StrictMode>
 )
 

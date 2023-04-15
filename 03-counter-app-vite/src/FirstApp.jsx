@@ -31,6 +31,7 @@ export const FirstApp = ({title, subtitle, name}) => {
         se encuentre entre llaves sea una expresion
         y no un objeto podemos llevarlo a cabo, como
         por ejemplo una suma, multiplicacion etc. */}
+        
         <p>{ subtitle }</p>
         <p>{ name }</p>
 
@@ -47,7 +48,7 @@ FirstApp.propTypes = {
 FirstApp.defaultProps = {
     name: 'Aaron Schcolnik',
     subtitle: 'No hay subtitulo :c',
-    title: 'No hay titulo',
+    // title: 'No hay titulo',
 }
 
 
