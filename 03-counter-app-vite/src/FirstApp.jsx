@@ -23,7 +23,7 @@ export const FirstApp = ({title, subtitle, name}) => {
     cantidad de elementos, lo importante es que siempre
     exista un nodo padre como es este */}
 
-        <h1>{ title }</h1>
+        <h1 data-testid="test-title">{ title }</h1>
 
 
         {/* <code>{ JSON.stringify( newMessage ) }</code>  */}
@@ -32,6 +32,7 @@ export const FirstApp = ({title, subtitle, name}) => {
         y no un objeto podemos llevarlo a cabo, como
         por ejemplo una suma, multiplicacion etc. */}
 
+        <p>{ subtitle }</p>
         <p>{ subtitle }</p>
         <p>{ name }</p>
 
