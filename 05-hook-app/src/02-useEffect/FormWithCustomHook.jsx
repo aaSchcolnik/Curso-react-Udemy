@@ -1,26 +1,19 @@
 import { useEffect, useState } from "react"
-import { Message } from "./Message";
+import { useForm } from "../hooks/useForm";
 
 
-export const SimpleForm = () => {
+export const FormWithCustomHook = () => {
 
-    const [formState, setformState] = useState({
-        username: 'strider',
-        email: 'fernando@google.com',
+    const {formState, onInputChange, username, email, password, onResetForm} = useForm({
+        username: '',
+        email: '',
+        password: ''
     });
 
-    const { username, email } = formState;
-
-    const onInputChange = ({target}) => { //recuerda, lo que esta dentro del parentesis
-        //es el evento, al poner {target} es descomponerlo en event.target
-        // console.log(event.target.name)
-        const {name, value} = target;
-        setformState({
-            ...formState,
-            [ name ]: value, //permite que cambie el valor de name unicamente
-        });
-
-    }
+    // Esta es una manera de descomponer el objeto formState cuando
+    // no estamos retornando sus valores directamente en useForm
+    // el retorno en useForm se hizo return{...formState}
+    // const { username, email, password } = formState;
 
 
     useEffect(() => { //cada vez que yo cambie el estado de cualquier cosa, se llama este useEffect
@@ -39,7 +32,7 @@ export const SimpleForm = () => {
     return (
         <>
 
-            <h1>Formulario Simple</h1>
+            <h1>Formulario con Custom Hook</h1>
             <hr/>
 
             <input
@@ -51,19 +44,25 @@ export const SimpleForm = () => {
                 onChange={ onInputChange }
             />
 
-            <input 
-                type="email"
+            <input
+                type="text"
                 className="form-control mt-2"
                 placeholder="fernando@google.com"
                 name="email"
-                value={ email }
+                value = { email }
                 onChange={ onInputChange }
             />
 
-        {
-            //si username es igual a strider2 muestra un mensaje
-            <Message className=" hidden"/>
-        }
+            <input 
+                type="password"
+                className="form-control mt-2"
+                placeholder="Contraseña"
+                name="password"
+                value={ password }
+                onChange={ onInputChange }
+            />
+
+            <button onClick={ onResetForm } className="btn btn-primary mt-2">Borrar</button>
 
         </>
 
